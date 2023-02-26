@@ -1,0 +1,427 @@
+2. Cron tab
+
+The cron command is used to repeatedly schedule a task at a specific time. The tasks are stored in a cron file and then executed using the cron command. The cron command reads the string from this file and schedules the task. The syntax for the string to enter in the cron file is as follows:
+
+<minute> <hour> <day> <month> <weekday> <command>
+
+
+another example of executing the date command after every 15 seconds:
+
+* * * * * date>> /tmp/date.log  ## here your cron job should run every minute of every hour of every day of every month, each day of the week
+* * * * * sleep 15; date>> /tmp/date.log
+* * * * * sleep 30; date>> /tmp/date.log
+* * * * * sleep 45; date>> /tmp/date.log
+
+Command to execute a cron after every 5 minutes.
+
+*/5 * * * * 
+
+Cron scheduler command helps you to execute the task on every Monday at 5 AM
+
+0 5 * * Mon
+
+This example will run each Monday and Wednesday at 5 PM.
+
+0 17 * * mon,wed 
+
+What does 0 * * * * mean in crontab?
+0 * * * * Execute a cron job every hour. 0 12 * * * Fire at 12:00 PM (noon) every day
+
+3. How to create, read and delete files?
+The touch command is used for creating files.
+Example: #touch filename
+
+ 
+The cat command is used for reading files.
+Example: #cat filename
+
+The rm command is used  for delete a file.
+Example: #rm –f  filename 
+
+4. How to create and delete a directory?
+The mkdir command is used for creating a directory. 
+Example: # mkdir filename
+
+The rmdir command is used for remove directory 
+Example: #rmdir filename 
+
+5. How to create multiple text files and directories?
+To create multiple text file touch file name {} command is used. 
+
+Example:
+
+Suppose we want create 4 files then we type:
+
+#touch filename{1..4}
+To create multiple directory mkdir filename {} command is used.
+
+Example:
+
+Suppose we want to create 4 directory, then we type:
+
+mkdir filename {1..4}
+
+6. What is the use of head and tail command?
+Head command is used for display started 10 lines
+
+Tail command is used for display started 10 lines
+
+7. How to find the current shell which you are using?
+$echo $SHELL command is used for find current shell.
+
+8. How to find an available shell in your system?
+Cat /etc/shells command is used to find available shells in your system.
+
+9. How to create shortcuts in Linux?
+To create shortcut “link” command use.
+
+There are two types of link:
+
+Hard link : it refer the inode number
+A hard link acts as a copy (mirrored) of the selected file. It accesses the data available in the original file.
+If the earlier selected file is deleted, the hard link to the file will still contain the data of that file
+Can't be used for Directory
+
+Soft link
+A soft link (also known as Symbolic link) acts as a pointer or a reference to the file name. It does not access the data available in the original file. If the earlier file is deleted, the soft link will be pointing to a file that does not exist anymore
+
+Can be used for Directory
+
+10. Tell me the difference between hard link and soft link?
+Deleting the original file does not affect the hard link but Deleting the original file makes the soft link inactive.
+
+11. How will you pass and access arguments to a script in Linux?
+For pass arguments in script “scriptname arg1 arg2 arg3 …” 
+
+For access arguments in script can be accessed inside the script as “$1 , $2 .. $n”
+
+12. What is the significance of $#?
+It represents the total number of arguments passed by string.
+
+13. What is the difference between $* and $@?
+$* consider the entire set of positional parameters as a single string, but $@ treat each quoted argument as a separate argument.
+
+14. Explain “s” permission bit in a file? 
+“s” bit also called “set user id”(SUID) bit. “s” on file causes the process to have the privileges of the owner of the file during the instance of the program.
+
+15. What are the different types of variables used in Shell Script?
+System defined variable: System defined variable created by os itself. These variables are generally defined in capital letters. It can be viewed by the “set” command.
+
+User defined variable: It created by system users. Value of variable can be view by using “echo $variablename” command.
+
+16. What is the difference between = and ==?
+= is used for assigning value to a variable.
+
+== is used for string comparison.
+
+17. What is the use of a pipe operator? How to execute multiple commands in one line?
+The pipe operator is used for one by one execution of command but commands should not be dependent on each other.
+
+18. What are the different modes of vi editors?
+Command mode: this is a mode where you start
+
+Edit mode: This mode allows you to do next editing.
+
+Ex mode: In this mode you interact with vi with instruction to process
+
+19. What is redirection?
+Redirection is the process of direction data from one output to another.
+
+20. How to find the status of the process?
+Ps ux command user for find status of process.
+
+21. How to check memory status?
+Free command is useful for checking memory status.
+
+22. How to debug a shell script?
+To debug a shell script we execute the script with the “-x” or “-nv”  option.
+
+23. Which command is used for comparing the string in the shell script?
+To compare the string “test” command is used.
+
+24. What is the difference between $! and $$?
+$! Shows process id of the process that recently went into background 
+
+$$  gives the process id of the currently executing process
+
+25. Which command is used to find all information of the user?
+“finger” command shows all information of users.
+
+26. Which four fundamental components of every file system?
+Boot block: It contains a small program called MBR which loads the kernel during system boot up.
+
+Super block: Super block contains all information about the file system.
+
+Inode block: It contains inode for every file of the file system.
+
+27. What is the Crontab?
+Crontab stands for cron table because it uses the job scheduler cron to execute tasks. The crontab is a list of commands that you want to run on a regular schedule, and also the name of the command used to manage that list. 
+
+28. How many fields are present in a crontab file?
+The five fields contain information on when to execute the command.
+
+minute(0-59)
+hour(0-23)
+day(1-31) 
+month(1-12)
+day of the week(0-6, Sunday = 0).
+29. What are the two files of crontab command?
+cron.allow which decides the users need to be permitted for using the crontab command.
+
+cron.deny which decides the users need to be prevented from using the crontab command
+
+30. What are the different commands available to check the disk usage?
+df: It is used to check the free disk space.
+du: It is used to check the directory wise disk usage.
+dfspace: It is used to check the free disk space in terms of MB.
+31.  How to open a read-only file in the Shell?
+vi –R <Filename>
+32. How to find out how long the system has been running? 
+By using the command “uptime”.
+
+33. How to connect to a remote server and execute some commands?
+We can use ssh to do this: 
+
+ssh username@serverIP -p sshport 
+Once the above command is executed, enter the password.
+
+34. How to connect to a database server from Linux? 
+mysql –S serverName –U username –P password
+35. How can I set the default permission to all users on every file which is created in the current shell? 
+umask 777
+36. How will I insert a line “ABCD” at every 50th line of a file? 
+sed  '50i\ABCD' filename 
+37. How to find the total disk space used by a specific user? 
+du -s /home/username 
+38. How to print the login names of all users on a system? 
+/etc/shadow file has all the users listed. 
+
+awk –F ':' '{print $1}' /etc/shadow|uniq –u
+39. Write a shell script to get current date, time, username and current working directory.
+#!/bin/sh
+echo "Hello, $LOGNAME"
+echo "Today's date is `date`"
+echo "Username is `who i am`"
+echo "Current directory is `pwd`"
+40. How to check if a directory exists?
+#!/bin/sh
+if [ -d $mydir ]
+then
+echo "Directory exists"
+fi
+41. Explain the file permissions.
+r – read 4
+
+w – write 2
+
+e – execute 1
+
+42. Given a file, replace all occurrence of word “ABC” with “DEF” from 10th line till end in only those lines that contains word “MNO” 
+sed –n '10,$p' file1|sed '/MNO/s/ABC/DEF/'
+43. How will you find the 19th line of a file using only tail and head command? 
+tail +19 file1|head -1 
+44. How to Use the sed command to replace the content of the file?
+if cat fille
+ABCD
+EFGH
+Then O/p should be 
+EFGH
+ABCD 
+
+sed '1! G; h;$!d' file1
+45. I want to create a directory such that anyone in the group can create a file and access any person’s file in it but none should be able to delete a file other than the one created by himself. 
+We can create the directory giving read and execute access to everyone in the group and setting its sticky bit “t” on as follows: 
+
+mkdir direc1
+chmod g+wx direc1
+chmod +t direc1
+46. How to get the 3rd element/column from each line from a file?
+#!/bin/sh
+awk '{print $3}' $1
+47. Write down the Syntax for all the loops in Shell Scripting.
+For Loop:
+
+for var in word1 word2 ... wordn
+do
+Statement(s) to be executed for every word.
+done
+While Loop:
+
+while command
+do
+Statement(s) to be executed if command is true
+Done
+Until Loop:
+
+until command
+do
+Statement(s) to be executed until command is true
+done
+48. How to pass arguments to a script?
+./script argument  used for passed argument to a script.
+
+Example:
+
+./script.sh  file.txt
+cat script.sh
+#!bin/bash
+Cat $1
+49. How to use arguments in the script?
+In the script we use first argument as $1 and second argument as $2 
+
+Example: To move file one destination($1) to another($2)
+
+./move.sh file.txt /text
+cat move.sh
+#!/bin/bash
+mv $1 $2
+50. How to get 5rd element from each line from the file?
+awk ‘{print $5}’
+51. how to find process name from process ID?
+“ps –p pid” command used to find the process name.
+
+52. How to create alias command in shell?
+Alias name = ”command whose alias to be created”.
+
+53 . What is the c and b permission field of the file?
+C specifies whether the file is character special file or block special file.
+
+54. How to get 5rd element from each line from the file?
+awk ‘{print $5}’
+55. What is the use of a shebang line?
+Shebang line at the top of each script determines the location of the engine which is to be used in order to execute the script.
+
+56. How to add two strings?
+S1=”hello”
+S2=”world”
+Let s3=$s1+$s2
+Echo $s3
+57. How to add two integers?
+Int1=3
+Int2=2
+Int3=$int1+$int2
+Echo $int3
+58. Write a script to check if a file exists on the system?
+If [-f /var/www/html]
+Then 
+Echo “file exists”
+Fi
+59. Why #!/bin/sh or #!/bin/bash at the beginning of every script?
+That line tells which shell to use. 
+
+60. From given file name find the count of lines containing word  “ABC”
+grep –c “ABC” filename
+61. What would be the output of command: echo ${new:-variable}
+Output: variable 
+
+62. How to print all array indexes?
+echo ${!array[@]} used to print all array indexes.
+63. How to remove elements from an array with id 3?
+Unset array[3]
+64. Write a script to compare numbers?
+#!/bin/bash
+X=10
+Y=20
+If [ $x –gt $y ]
+Then 
+Echo “ x is greater than y”
+Else 
+Echo “y is greater than x”
+Fi
+65. What are the types of permission at the file level in Shell?
+Owner permissions: The permissions granted to a user with all the rights at the root level.
+
+Group permissions: The permissions granted to a user with all the rights in a particular group.
+
+Other  permissions: The permissions granted to a user with all the rights globally to a file.
+
+66. How  to use comments in shell scripting?
+#! /bin/bash
+# addition
+((sum=30+20))
+#print
+Echo$sum
+67. How to use multi-line comments in shell scripting?
+#! /bin/bash
+: ‘
+This script calculates squares of 8.
+‘
+((square=8*8))
+echo $area
+68. Write a script that receive input from user.
+#! /bin/bash
+Echo  –n  “enter input:”
+read input
+echo “ you entered: $input”
+69. Write a script using the AND operator.
+#! /bin/bash
+Echo –n “enter number:”
+read number
+if  [[ ($number  –lt 10 )  && ($number%2  –eq  0)]]
+echo  “even number”
+else 
+echo “odd number”
+fi
+70. Write an example of OR operator.
+#! /bin/bash
+Echo –n “enter any number : “
+read n
+if  [[ ( $n –eq 10 || $n  -eq 45) ]]
+then 
+echo “ you win”
+
+else  “ you lost!”
+fi
+example of elif 
+#! /bin/bash
+Echo –n “enter number :”
+read number 
+if  [[ $number  -gt 10]]
+then 
+echo “number  is greater than 10”
+elif  [[ $num –eq 10 ]]
+then 
+echo ‘number is equal to 10”
+else 
+echo “ number  is less than 10”
+fi
+71. Write a script for adding multiple values.
+#! /bin/bash
+Sum=0
+For (( counter=1 ; counter<5 ;counter++))
+Do
+Echo –n “enter your number”
+read n
+(( sum+=n))
+#echo –n “$counter”
+Done 
+Printf   “\n”
+echo  “result is : $ sum”
+72. Write an example of a function.
+#! /bin/bash 
+Function Add()
+{
+echo  –n “enter number:”
+read a
+echo  –n  “enter 2nd number :”
+read b
+echo “addition  is: $((  a+b ))”
+}
+Add
+73. How to send mail using shell script?
+#! /bin/bash
+Recipientadmin@example.com
+Subject=”script”
+Message=”this mail send by script”
+‘mail –s $subject $recipient <<< $message’
+74. Write script to print current date and time.
+#! /bin/bash
+year= ‘date +%Y’
+month=’date  +%m’
+day=’date +%d’
+hour=’date +% H’
+minute=’date +%M’
+second=’date +%S’
+echo ‘date’
+echo  “current date is :$day-$month=$year”
+echo  “current time is :$hour:$minute:$second”
