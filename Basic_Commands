@@ -154,6 +154,13 @@ Super block: Super block contains all information about the file system.
 
 Inode block: It contains inode for every file of the file system.
 
+==== Redirect =====
+cat file1.txt file2.txt > newfile.txt ( newfile will have both file1 & file2 content )
+
+>> will append the content wherever > just update it
+
+
+
 27. What is the Crontab?
 Crontab stands for cron table because it uses the job scheduler cron to execute tasks. The crontab is a list of commands that you want to run on a regular schedule, and also the name of the command used to manage that list. 
 
