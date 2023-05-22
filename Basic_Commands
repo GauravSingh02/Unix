@@ -27,6 +27,12 @@ This example will run each Monday and Wednesday at 5 PM.
 What does 0 * * * * mean in crontab?
 0 * * * * Execute a cron job every hour. 0 12 * * * Fire at 12:00 PM (noon) every day
 
+back ticks `` & $() is same command subsitution
+
+To make it permanent use to Enviornment Variables ( under home directory .profile .bashrc etc. )
+
+
+
 3. How to create, read and delete files?
 The touch command is used for creating files.
 Example: #touch filename
