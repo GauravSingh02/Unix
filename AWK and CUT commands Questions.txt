@@ -21,7 +21,7 @@ awk '{print NR "- " $2}' file_name
 
 
 How to get a column from CSV?
-awk -F, '{print $7}' country.txt
+awk -F ";" '{print $7}' country.txt
 
 
 How to change the salary of Pol?
@@ -46,6 +46,10 @@ awk 'NR==3 {print}' file_name
 
 How to see range of lines, 3 to 5th line?
 awk 'NR==3,NR==5 {print}'
+
+how to see 3rd and 5th lines only
+awk 'NR==3;NR==5 {print}'
+
 
 
 How to see which lines are empty?
