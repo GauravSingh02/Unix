@@ -9,6 +9,8 @@ awk '{print $2,$3}' file_name
 How to see last column?
 awk '{print $NF}' file_name
 
+how to see 2nd last column
+awk '{print $(NF-1)}' fileName
 
 How to see line no.?
 awk '{print NR}' file_name
