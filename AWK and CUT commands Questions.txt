@@ -39,6 +39,8 @@ awk 'length($0)>15' file_name
 How to see data of Indian users?
 awk '/India/ {print}' file_name
 
+how to see data of only "i" in 2nd column only
+awk '$2~/I/ {print}' file_name
 
 How to see a specific line example 3rd line?
 awk 'NR==3 {print}' file_name
