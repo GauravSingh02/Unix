@@ -1,0 +1,82 @@
+### This is for if else condidtion
+
+#! /bin/bash
+echo "hello"
+read -p "How old are you?  " age
+
+if [ $age -lt 0 -o $age -gt 200 ]; then  // Or condition 
+	echo "Number Not Acceptable"
+	exit
+fi
+
+if [ $age -gt 26 -a $age -lt 64 ]; then  // And condition 
+	echo "you are between 26 and 64"
+	exit
+fi
+echo "Ok let's contunue with the script:"
+
+## to Check empty String
+#! /bin/bash
+
+read -p "Type something:  (Enter to exit)" str
+if [ -z $str ]; then  // If will put [ -z "$str" ] then it'll work for this "Cad bad" entered values/string without any errors
+ 	echo "this is an empty string"
+	exit
+fi
+echo "moving on"
+
+
+#! /bin/bash
+
+
+read -p "give me the name of the file please " myfile
+
+#File Exist 
+if [ -e $myfile ]; then
+	echo "$myfile  exists!"
+	#open $myfile
+else
+	echo "$myfile Does Not Exists"
+fi
+
+
+### #File DOES NOT Exist 
+if [ ! -e $myfile ]; then
+	echo "$myfile  Does Not Exist!"
+fi
+
+### Directory
+if [ -d $myfile ]; then
+	echo "$myfile is a Directory !"
+	#open $myfile
+else
+	echo "$myfile is Not a Directory"
+fi
+
+
+### #File exists And is Readable  
+if [ -r $myfile ]; then
+	echo "$myfile is Readable !"
+	#open $myfile
+else
+	echo "$myfile is Not Readable"
+fi
+
+
+### #File Exists and is Executable  
+if [ -x $myfile ]; then
+	echo "$myfile is Executable !"
+	#open $myfile
+else
+	echo "$myfile is Not Executable"
+fi
+
+### #File Exists and it is NOT Empty
+if [ -s $myfile ]; then
+	echo "$myfile Not Empty !"
+	#open $myfile
+else
+	echo "$myfile is Empty"
+fi
+
+echo "bye"
