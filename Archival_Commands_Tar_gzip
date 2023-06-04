@@ -1,0 +1,37 @@
+# tar command is to create an archive to directory or file structure
+
+Syntax : tar [flags] archive-file-name files-to-archive
+
+$ tar cvf MyProject.20090816.tar MyProject  ## Here MyProject folder/Dir will get convert to MyProject.20090816.tar file
+
+ ## The letter c means “create archive.”
+ ## The letter v means “verbose,” which tells tar to print all the filenames as they are added to the archive.
+ ## The letter f tells tar that the name of the archive appears next (right after these options)
+ 
+ # To list the contents of an uncompressed tar archive
+ $ tar tvf MyProject.20090816.tar
+ 
+ # To extract the contents of a Linux tar archive
+ $ tar xvf MyProject.20090816.tar
+ 
+ # For compressed archives the tar extract command looks like this
+ $ tar xzvf MyProject.20090816.tar.gz
+ 
+ 
+
+# gzip command
+
+# compressed file named access.log.gz
+$ gzip access.log
+
+# The gunzip command works just the opposite of gzip, converting a gzip'd file back to its original format
+$ gunzip access.log.gz
+
+# For instance, instead of using cat to display the entire contents of the file, you use zcat to work on the gzip'd file instead, like this:
+$ zcat access.log.gz
+
+# You can also scroll through the file one page at a time with zmore:
+$ zmore access.log.gz
+
+#you can grep through the compressed file with zgrep:
+zgrep '/java/index.html' access.log.gz
