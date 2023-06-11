@@ -1,10 +1,25 @@
+### if user is root or not 
+
+#! /bin/bash
+ # Display the user id 
+ echo "User ID is "${UID}"
+ 
+ if [[ "${UID}" -eq to 0 ]]
+ then
+ 	echo "You is root"
+else 
+	echo "user is not roo"
+fi
+ 
+ 
+
 ### This is for if else condidtion
 
 #! /bin/bash
 echo "hello"
 read -p "How old are you?  " age
 
-if [ $age -lt 0 -o $age -gt 200 ]; then  // Or condition 
+if [ $age -lt 0 -o $age -gt 200 ]; then  // Or condition & ; is line seperator 
 	echo "Number Not Acceptable"
 	exit
 fi
