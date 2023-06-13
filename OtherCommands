@@ -82,6 +82,18 @@ $ du -h
 
 $ du -ah ( all files in human readable format )
 
+## to know path details of echo command 
+
+$ type -a echo ( 
+
+## test command 
+
+# Stat command will tell access, modify and Change time
+$ state myfile.txt
+
+
+
+
 
 
 
