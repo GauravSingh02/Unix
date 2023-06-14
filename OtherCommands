@@ -91,6 +91,9 @@ $ type -a echo (
 # Stat command will tell access, modify and Change time
 $ state myfile.txt
 
+# How to create Hidden file (add dot(.) while creating it
+ $ touch .file.txt 
+
 
 
 
