@@ -39,6 +39,7 @@ reverse the meaning
 -------------------
 grep -v fred /etc/passwd             # find any line *not* containing 'fred'
 grep -vi fred /etc/passwd            # same thing, case-insensitive
+grep -v '#' filename > newfile       # Delete lines containing '#' comment character
 
 
 grep in a pipeline
