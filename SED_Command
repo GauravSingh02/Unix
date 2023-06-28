@@ -6,6 +6,8 @@ sed -n '$p' file_name
 How to see all the users from India Country?
 sed -n '/India/p' file_name
 
+Delete lines containing '#' comment character
+sed '/#/d' filename > newfile
 
 How to use multiple expression in sed command?
 Example: If you wanna only see 2 and 5th line
