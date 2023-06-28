@@ -1,3 +1,8 @@
+#! symbol, also known as a shebang or hashbang,
+This tells the system to use the Bash interpreter to execute the script
+
+
+
 ### if user is root or not 
 
 #! /bin/bash
