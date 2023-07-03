@@ -1,3 +1,41 @@
+File Structure:
+
+/: The root directory is the top-level directory in the file system hierarchy. All other directories and files are contained within it.
+
+/bin: This directory contains essential binary executable files that are necessary for basic system operations. Common command-line utilities like ls, cp, mv, and rm are stored here.
+
+/boot: The /boot directory contains files related to the system's boot process. It typically includes the Linux kernel, initial RAM disk (initrd), boot loader configuration files (such as GRUB), and other related files.
+
+/etc: The /etc directory stores system configuration files. It contains various configuration files for system-wide settings, services, network configurations, user authentication, and more.
+
+/home: Each user on the system has a separate directory in /home that serves as their home directory. Users can store their personal files and directories here.
+
+/lib and /lib64: These directories contain libraries required by the binaries in /bin and /sbin. The /lib directory typically contains 32-bit libraries, while /lib64 contains 64-bit libraries on 64-bit systems.
+
+/mnt and /media: These directories are used as mount points for temporarily attaching external storage devices like USB drives, CD-ROMs, or network shares. /mnt is traditionally used for manually mounted devices, while /media is used for automatically mounted devices.
+
+/opt: This directory is commonly used to install optional or third-party software packages. It provides a location to install software that is not managed by the system's package manager.
+
+/sbin: The /sbin directory contains system binaries that are typically used by administrators or during system maintenance. These executables perform critical system management tasks and require elevated privileges.
+
+/tmp: The /tmp directory is used for storing temporary files that are created and accessed by programs during runtime. The contents of this directory are typically cleared upon reboot.
+
+/usr: The /usr directory contains user-related files and programs. It has subdirectories such as /usr/bin for user binaries, /usr/include for C header files, /usr/lib for libraries, /usr/share for shared data, and more.
+
+/var: The /var directory contains variable files that can change in size or content over time. It includes log files (/var/log), spool files for printers or mail servers (/var/spool), temporary files (/var/tmp), and other variable data.
+
+
+Absolute Path: An absolute path in Linux starts with the root directory / and specifies the complete location of a file or directory in the file system. Here are a few examples:
+
+/home/user/Documents/file.txt: Absolute path to a file called file.txt located in the Documents directory under the user's home directory.
+/usr/bin/python3: Absolute path to the python3 executable located in the /usr/bin directory.
+
+Relative Path: A relative path in Linux specifies the location of a file or directory relative to the current working directory. It does not start with the root directory but instead references the file or directory based on the current location. Here are a few examples:
+
+If the current working directory is /home/user/:
+Documents/file.txt: Relative path to a file called file.txt located in the Documents directory under the current directory.
+../photos/image.jpg: Relative path to a file called image.jpg located in the photos directory one level up from the current directory.
+
 2. Cron tab
 
 The cron command is used to repeatedly schedule a task at a specific time. The tasks are stored in a cron file and then executed using the cron command. The cron command reads the string from this file and schedules the task. The syntax for the string to enter in the cron file is as follows:
@@ -13,15 +51,12 @@ another example of executing the date command after every 15 seconds:
 * * * * * sleep 45; date>> /tmp/date.log
 
 Command to execute a cron after every 5 minutes.
-
 */5 * * * * 
 
 Cron scheduler command helps you to execute the task on every Monday at 5 AM
-
 0 5 * * Mon
 
 This example will run each Monday and Wednesday at 5 PM.
-
 0 17 * * mon,wed 
 
 What does 0 * * * * mean in crontab?
@@ -50,6 +85,7 @@ Example: # mkdir filename
 
 The rmdir command is used for remove directory 
 Example: #rmdir filename 
+or rm -rf filename ( Remove recurvsively and forcefully)
 
 5. How to create multiple text files and directories?
 To create multiple text file touch file name {} command is used. 
