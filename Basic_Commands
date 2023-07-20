@@ -95,13 +95,12 @@ Example:
 Suppose we want create 4 files then we type:
 
 #touch filename{1..4}
+
 To create multiple directory mkdir filename {} command is used.
 
-Example:
-
-Suppose we want to create 4 directory, then we type:
-
+Example:Suppose we want to create 4 directory, then we type:
 mkdir filename {1..4}
+mkdir -p /tmp/asia/india/bangalore  ## Create multiple directories in one shot
 
 6. What is the use of head and tail command?
 Head command is used for display started 10 lines
