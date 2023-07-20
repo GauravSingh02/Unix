@@ -4,3 +4,6 @@ This file will contain info of DNS (IP and host-name mapping) details
 
 # DNS server will have all IP and host-name mapping under below file
 /etc/resolv.conf
+
+# to query hostname in DNS server
+nslookup 
