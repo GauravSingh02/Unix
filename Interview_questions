@@ -1,0 +1,6 @@
+# /etc/hosts
+
+This file will contain info of DNS (IP and host-name mapping) details 
+
+# DNS server will have all IP and host-name mapping under below file
+/etc/resolv.conf
