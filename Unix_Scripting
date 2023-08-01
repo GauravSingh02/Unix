@@ -1,6 +1,55 @@
 #! symbol, also known as a shebang or hashbang,
 This tells the system to use the Bash interpreter to execute the script
 
+#### How to identify those deployment completion
+#!/bin/bash
+
+# Define the path to your server log file
+log_file="path/to/your/server/logs.txt"
+
+# Define the specific API endpoint you want to track
+specific_api_endpoint="/api/endpoint"
+
+# Use grep to count the occurrences of the specific API endpoint in the log file
+total_api_calls=$(grep -c "$specific_api_endpoint" "$log_file")
+
+# Print the result
+echo "Total number of '$specific_api_endpoint' API calls: $total_api_calls"
+
+================================================================================
+### RTM to check no of API calls for specific pattern 
+#!/bin/bash
+
+# Define the list of servers (replace with your server IPs or hostnames)
+servers=("server1" "server2" "server3")
+
+# Define the path to the server log file on each server
+log_file_path="/path/to/your/server/logs.txt"
+
+# Define the specific API endpoint you want to track
+specific_api_endpoint="/api/endpoint"
+
+# Function to count API calls on a specific server
+count_api_calls() {
+    server="$1"
+    ssh "$server" "grep -c '$specific_api_endpoint' '$log_file_path'"
+}
+
+# Initialize total API calls counter
+total_api_calls=0
+
+# Loop through each server and count API calls
+for server in "${servers[@]}"; do
+    echo "Checking server: $server"
+    api_calls_on_server=$(count_api_calls "$server")
+    echo "Total API calls on $server: $api_calls_on_server"
+    total_api_calls=$((total_api_calls + api_calls_on_server))
+done
+
+# Print the aggregated result
+echo "Total number of '$specific_api_endpoint' API calls across all servers: $total_api_calls"
+
+===================
 
 
 ### if user is root or not 
