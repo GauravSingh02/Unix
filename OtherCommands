@@ -95,6 +95,9 @@ $ state myfile.txt
 # How to create Hidden file (add dot(.) while creating it
  $ touch .file.txt 
 
+## Sending output to /dev/null is often used to suppress unnecessary or verbose messages from commands or scripts.
+If you want to run a command silently without displaying any output, you can redirect the output to /dev/null.
+
 
 
 
