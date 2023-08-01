@@ -98,7 +98,9 @@ $ state myfile.txt
 ## Sending output to /dev/null is often used to suppress unnecessary or verbose messages from commands or scripts.
 If you want to run a command silently without displaying any output, you can redirect the output to /dev/null.
 
-
+Unix booted.
+Program Unix(kernel) is booted into main memory, and remains active till the computer is shut down
+Program init runs as a background task and remains running till shutdown
 
 
 
