@@ -7,3 +7,8 @@ This file will contain info of DNS (IP and host-name mapping) details
 
 # to query hostname in DNS server
 nslookup 
+
+###### mask and unmask 
+In Linux, the unmask command is used to remove a mask from a service unit file managed by systemd. The mask is a mechanism used by systemd to prevent a service from being started, even if it is enabled or requested to start.
+
+When a service unit is masked, it cannot be started or enabled, and its dependencies won't be started automatically. This can be useful when you want to prevent a service from running temporarily or during system boot.
