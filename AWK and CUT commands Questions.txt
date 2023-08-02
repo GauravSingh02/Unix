@@ -1,10 +1,10 @@
-﻿How to see column 2 or 3?
-awk '{print $2}' file_name
+The awk command in Linux is a versatile text processing tool used to manipulate and analyze structured data, such as text files or output from other commands
 
+How to see column 2 or 3?
+awk '{print $2}' file_name
 
 How to see multiple coulumns?
 awk '{print $2,$3}' file_name
-
 
 How to see last column?
 awk '{print $NF}' file_name
