@@ -23,8 +23,7 @@ File Structure:
 /usr: The /usr directory contains user-related files and programs. It has subdirectories such as /usr/bin for user binaries, /usr/include for C header files, /usr/lib for libraries, /usr/share for shared data, and more.
 
 /var: The /var directory contains variable files that can change in size or content over time. It includes log files (/var/log), spool files for printers or mail servers (/var/spool), temporary files (/var/tmp), and other variable data.
-
-
+ 
 Absolute Path: An absolute path in Linux starts with the root directory / and specifies the complete location of a file or directory in the file system. Here are a few examples:
 
 /home/user/Documents/file.txt: Absolute path to a file called file.txt located in the Documents directory under the user's home directory.
@@ -35,6 +34,7 @@ Relative Path: A relative path in Linux specifies the location of a file or dire
 If the current working directory is /home/user/:
 Documents/file.txt: Relative path to a file called file.txt located in the Documents directory under the current directory.
 ../photos/image.jpg: Relative path to a file called image.jpg located in the photos directory one level up from the current directory.
+
 
 2. Cron tab
 
