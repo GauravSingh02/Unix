@@ -85,11 +85,15 @@ Example: # mkdir filename
 
 Copy the directory
 cp -r [source] [destination]
-$ cp -r receipts/ backupof_receipts/
+$ cp -r receipts/ backupof_receipts/   ### This will work if there is no directory on target
 
 The rmdir command is used for remove directory 
-Example: #rmdir directory 
+Example: #rmdir directory (will work only when directory is empty)
 or rm -rf directory/ ( Remove recurvsively and forcefully)
+
+[gaurav@centos-host ~]$ rmdir lfcs
+rmdir: failed to remove 'lfcs': Directory not empty
+[gaurav@centos-host ~]$ rm -r lfcs
 
 5. How to create multiple text files and directories?
 To create multiple text file touch file name {} command is used. 
@@ -124,10 +128,19 @@ To create shortcut “link” command use.
 Hard link : it refer the inode number
 A hard link acts as a copy (mirrored) of the selected file. It accesses the data available in the original file.
 If the earlier selected file is deleted, the hard link to the file will still contain the data of that file
-Can't be used for Directory
+Can't be used for Directory & Only hardlink to files on the same filesystem
 
 Soft link
 A soft link (also known as Symbolic link) acts as a pointer or a reference to the file name. It does not access the data available in the original file. If the earlier file is deleted, the soft link will be pointing to a file that does not exist anymore
+
+here link_to_tmp is soft link and hlink is hardlink 
+commands: 
+ln -s /tmp /home/bob/link_to_tmp
+ln /tmp/hlink /home/bob/hlink
+
+lrwxrwxrwx 1 bob  bob     4 Aug  3 10:04 link_to_tmp -> /tmp
+-rw-r--r-- 2 bob  bob     0 Aug  3 10:04 hlink
+
 
 ## Through "Stat" command you can get the details about links
 
