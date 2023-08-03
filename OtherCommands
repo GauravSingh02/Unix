@@ -1,3 +1,9 @@
+SSH is more secure than Telnet (highly insecure)
+
+command --help  ( faster inputs) 
+ls --help ### will provide more details ls command
+man ls  (detailed inputs)
+
 ####### ps command ######
 
 # To get "full" information about each process.
