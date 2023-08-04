@@ -16,6 +16,9 @@ grep '^fred' /etc/passwd             # find 'fred', but only at the start of a l
 grep '[FG]oo' *                      # find Foo or Goo in all files in the current dir
 grep '[0-9][0-9][0-9]' *             # find all lines in all files in the current dir with three numbers in a row
 
+# Filter out the lines that contain any word that starts with a capital letter and are then followed by exactly two lowercase letters in /etc/nsswitch.conf file and save the output in /home/bob/filtered1 file
+$ egrep -w "[A-Z][a-z]{2}" /etc/nsswitch.conf > /home/bob/filtered1
+
 
 # display matching filenames, not lines
 -------------------------------------
