@@ -1,3 +1,12 @@
+# Change all values enabled to disabled in /home/bob/values.conf config file.
+$ sed -i "s/enabled/disabled/g" values.conf
+
+# While ignoring the case sensitivity, change all values disabled to enabled in /home/bob/values.conf config file.
+$ sed -i "s/disabled/enabled/gi" values.conf
+
+# Change all values enabled to disabled in /home/bob/values.conf config file from line number 500 to 2000
+$ sed -i "500,2000s/enabled/disabled/g" values.conf
+
 How to show only a given line or range of lines?
 sed -n '1p' file_name
 sed -n '1,5p' file_name
