@@ -1,3 +1,31 @@
+Redirecting output
+date > fileanme or date 1> filename ==> overwrite the file
+date >> filename --> append the file
+
+# Use the cat command, and redirection, to add (append) the contents of /home/bob/file.txt to /home/bob/destination.txt
+$ cat /home/bob/file.txt >> /home/bob/destination.txt
+
+stdin (<)==> Standard Input
+stdout (1>)==> Standard Output
+stderr (2>)==> Standard Error
+
+# Execute /home/bob/script.sh script and save all errors only in /home/bob/output_errors.txt file
+$ ./script.sh 2> /home/bob/output_errors.txt
+
+2>&1 ==> stdout & stderror will capture in diff-2 respectively 
+
+# Execute /home/bob/script.sh script and save all command output (both errors/warnings and normal output) in /home/bob/output.txt file
+$ ./script.sh > /home/bob/output.txt 2>&1
+
+both "heredoc" and "here string" are used for input redirection, allowing you to pass input to commands in various ways. They are particularly useful when you need to provide multiple lines of input or strings to a command
+
+heredoc and here string
+sort <<EOF
+
+b >>>1+2+3
+6
+
+
 SSH is more secure than Telnet (highly insecure)
 
 command --help  ( faster inputs) 
@@ -103,6 +131,8 @@ $ state myfile.txt
 
 ## Sending output to /dev/null is often used to suppress unnecessary or verbose messages from commands or scripts.
 If you want to run a command silently without displaying any output, you can redirect the output to /dev/null.
+
+grep –r '^The' /etc/ 2>/dev/null  ### There won't be any error now
 
 Unix booted.
 Program Unix(kernel) is booted into main memory, and remains active till the computer is shut down
