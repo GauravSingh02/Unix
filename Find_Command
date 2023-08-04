@@ -23,6 +23,8 @@ find . -iname foo                               # find foo, Foo, FOo, FOO, etc.
 find . -iname foo -type d                       # same thing, but only dirs
 find . -iname foo -type f                       # same thing, but only files
 
+find -name "f*" -o -size +10M                   # name start with f and size greater than 10MB
+
 # find files with different extensions
 # ------------------------------------
 find . -type f \( -name "*.c" -o -name "*.sh" \)                       # *.c and *.sh files
@@ -31,6 +33,7 @@ find . -type f \( -name "*cache" -o -name "*xml" -o -name "*html" \)   # three p
 # find files that don't match a pattern (-not)
 # --------------------------------------------
 find . -type f -not -name "*.html"                                # find all files not ending in ".html"
+find \! -name "f*"                                                # find all file except name starting with f
 
 # find files by text in the file (find + grep)
 # --------------------------------------------
@@ -119,6 +122,12 @@ $ find / -size 10M
 #Find Size between 100MB and 1GB
 $ find / -size +100M -size -1G
 
+# Find all the files which have been modified in the last 30 minutes in the /var directory
+$ sudo find /var -type f -mmin -30 | wc -l
+
+# Find all files between 5mb and 10mb in the /usr directory and save the output (along with parent path) in home/bob/size.txt file.
+$ find /usr -type f -size +5M -size -10M > /home/bob/size.txt
+
 # find files by modification time using a temp file
 # -------------------------------------------------
 touch 09301330 poop           # 1) create a temp file with a specific timestamp
@@ -145,3 +154,15 @@ find . -type f -name "*html" | pax -w -f jw-htmlfiles.tar
 
 # exclude files from other devices (like depreceted -xdev in macOS). For linux: -xdev
 find -x . -type f -name "*.java"
+
+# Find files/directories under /var/log/ directory that the group can write to, but others cannot read or write to it. Save the list of the files/directories (with complete parent path) in /home/bob/data.txt file.
+$ sudo find /var/log/ -perm -g=w ! -perm /o=rw > /home/bob/data.txt
+
+# Find our secret file under /home/bob. You can either look for a file that is exactly 213 kilobytes or a file that has permission 402 in octal.
+$ find /home/bob -size 213k -o -perm 402 > /home/bob/secfile.txt
+
+# Add the permissions for setuid, setgid and sticky bit on /home/bob/datadir directory
+drwxr-xr-x 2 bob bob 4096 Aug  4 02:23 datadir
+[gaurav@centos-host ~]$ chmod u+s,g+s,o+t datadir
+[bob@centos-host ~]$ ls -ltr
+drwsr-sr-t 2 bob bob 4096 Aug  4 02:23 datadir
