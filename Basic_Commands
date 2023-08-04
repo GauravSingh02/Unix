@@ -293,12 +293,13 @@ EFGH
 ABCD 
 
 sed '1! G; h;$!d' file1
+
 45. I want to create a directory such that anyone in the group can create a file and access any person’s file in it but none should be able to delete a file other than the one created by himself. 
 We can create the directory giving read and execute access to everyone in the group and setting its sticky bit “t” on as follows: 
-
 mkdir direc1
 chmod g+wx direc1
-chmod +t direc1
+chmod +t direc1  or chmod 1644 direc1  ( here 1 is sticky bit )
+
 46. How to get the 3rd element/column from each line from a file?
 #!/bin/sh
 awk '{print $3}' $1
