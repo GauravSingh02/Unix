@@ -17,7 +17,11 @@ $ tar cvf MyProject.20090816.tar MyProject  ## Here MyProject folder/Dir will ge
  # For compressed archives the tar extract command looks like this
  $ tar xzvf MyProject.20090816.tar.gz
  
- 
+ # List the content of /home/bob/logs.tar archive and save the output in /home/bob/tar_data.txt file.
+$ tar tfP logs.tar > /home/bob/tar_data.txt
+
+# Extract the contents of /home/bob/archive.tar.gz to the /tmp directory.
+$ tar xf /home/bob/archive.tar.gz -C /tmp
 
 # gzip command
 
@@ -34,4 +38,7 @@ $ zcat access.log.gz
 $ zmore access.log.gz
 
 #you can grep through the compressed file with zgrep:
-zgrep '/java/index.html' access.log.gz
+$ zgrep '/java/index.html' access.log.gz
+
+# We have a /home/bob/lfcs.txt.xz file, uncompress it under /home/bob/
+$ 
