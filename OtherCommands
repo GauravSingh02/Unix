@@ -1,3 +1,8 @@
+journalctl is a powerful command-line utility in Linux that allows you to query and view logs from the systemd journal. The systemd journal is a centralized logging system that collects and stores log messages from various services, daemons, and the kernel.
+
+journalctl  ==> view all the logs
+journalctl -u ==> view logs for specific service
+
 Redirecting output
 date > fileanme or date 1> filename ==> overwrite the file
 date >> filename --> append the file
@@ -107,12 +112,21 @@ $ sudo renice 9 {pid}
 
 # List all files that are opened by process with PID 1, this process is owned by the root user. Save the output in /home/bob/files.txt file.
 $ sudo lsof -p 1 > /home/bob/files.txt
+ or ps -p 1 
+
+# All the process run by user Gaurav
+$ ps -U gaurav 
 
 # Identify the PID of the process named rpcbind and save its value in /home/bob/pid.txt file
 $ pgrep rpcbind > /home/bob/pid.txt
 
 # When a process receives a SIGHUP(Signal hang up) signal, it typically indicates that the terminal or connection that the process was associated with is no longer available or has been closed
-$ 
+ For example
+$ sudo kill -SIGHUP {pid}  ==> here we're sending hang-up signal to pid
+
+kill -9 {pid} ==> here we're sending kill signal which is equivalent to 9 ~ SIGKILL 
+
+$ kill -L ==> All listing of signal to process 
 
 # Using ps command, identify the CPU and Memory usage by only the process having PID 1 and save the entire command output in /home/bob/resources.txt file.
 $ ps u 1 > /home/bob/resources.txt
