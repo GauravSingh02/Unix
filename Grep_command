@@ -50,6 +50,8 @@ ps auxwww | grep httpd               # all processes containing 'httpd'
 ps auxwww | grep -i java             # all processes containing 'java', ignoring case
 ls -al | grep '^d'                   # list all dirs in the current dir
 
+# Under /var/log directory, search for all files containing the reboot string and save the search result in /home/bob/reboot.log file.
+$ sudo grep -r 'reboot' /var/log/ > reboot.log
 
 search for multiple patterns
 ----------------------------
