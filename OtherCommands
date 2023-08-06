@@ -87,7 +87,8 @@ to resume job background or forground
 bg %Job_id
 fg %job_id
 
-
+# Run a command to sleep for 3000 seconds and make sure its running in the background
+$ sleep 3000 &
 
 nice value ( -20 to 19 ) 
 19 is lowest and -20 is highest priorty of job
