@@ -32,6 +32,9 @@ command --help  ( faster inputs)
 ls --help ### will provide more details ls command
 man ls  (detailed inputs)
 
+#Copy the output of the sshd.service status to /home/bob/service.txt.
+$ sudo systemctl status sshd.service > service.txt
+
 ####### ps command ######
 
 # To get "full" information about each process.
@@ -95,6 +98,24 @@ nice -n -10 /home/gasingh/echo.sh
 # how to check the nice value  
 ps -l process_id
 
+# How do we see all processes running on the system, along with their nice values?
+$ ps lax 
+
+# Assign a nice value of 9 to the sshd process.
+$ sudo renice 9 {pid}
+
+# List all files that are opened by process with PID 1, this process is owned by the root user. Save the output in /home/bob/files.txt file.
+$ sudo lsof -p 1 > /home/bob/files.txt
+
+# Identify the PID of the process named rpcbind and save its value in /home/bob/pid.txt file
+$ pgrep rpcbind > /home/bob/pid.txt
+
+# When a process receives a SIGHUP(Signal hang up) signal, it typically indicates that the terminal or connection that the process was associated with is no longer available or has been closed
+$ 
+
+# Using ps command, identify the CPU and Memory usage by only the process having PID 1 and save the entire command output in /home/bob/resources.txt file.
+$ ps u 1 > /home/bob/resources.txt
+
 #nohup (if you want process to keep running post terminal is logout )
 $ nohup ./echo.sh &
 
@@ -137,6 +158,21 @@ grep –r '^The' /etc/ 2>/dev/null  ### There won't be any error now
 Unix booted.
 Program Unix(kernel) is booted into main memory, and remains active till the computer is shut down
 Program init runs as a background task and remains running till shutdown
+
+# journalctl is a command-line utility in Linux used to query and view logs from the systemd journal. The systemd journal is a centralized logging system that collects and stores log messages from various services, daemons, and the kerne
+
+####### Service Commands ######### 
+
+systemctl start {service}
+systermctl status {service}
+systermctl enable {service}   ## Post shutdown/crash the server still it'll work 
+systermctl reload {service}
+systermctl stop {service}
+systermctl disable {service}
+
+sshd.service file will have 
+
+mask/unmask : to kick-off one service from other service or not
 
 
 
