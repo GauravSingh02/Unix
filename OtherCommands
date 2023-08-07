@@ -152,8 +152,14 @@ $ df -h ( human readable format )
 $ du -h 
 
 $ du -ah ( all files in human readable format )
-
+$ du -sh ## here s is sumarise option 
 ## to know path details of echo command 
+
+## Free ## Free Memory space
+free 
+
+$ uptime
+17:24:55 up 32 min, 1 user, load average: 0.05, 0.05, 0.01   # load average on CPU sec, min, hr 
 
 $ type -a echo ( 
 
