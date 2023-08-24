@@ -70,13 +70,24 @@ Solution: Execute command sudo crontab -e and add below given code
 Solution: Execute command sudo crontab -e and add below given code
          0 6,23 * * 0 sudo systemctl restart nginx
 
+cronjob every 5 sec 
+crontab -e ## Open your crontab for editing
+* * * * * /path/to/your/script.sh ## Add a line to your crontab file that runs a script every minute
+------------ script.sh --------
+#!/bin/bash
+sleep 30
+# Your task/command here
+echo "Task executed at $(date)"
+-----------------------------------
+## This setup will effectively run your task every 30 seconds
+
 you can get crontab details under "/etc/crontab" 
 
 back ticks `` & $() is same command subsitution
 
 To make it permanent use to Enviornment Variables ( under home directory .profile .bashrc etc. )
 
-#### stat command will give more metadata about files 
+#### stat command will give more metadata about files (including links)
 $ stat {file_name}
 
 3. How to create, read and delete files?
