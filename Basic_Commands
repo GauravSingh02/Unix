@@ -210,6 +210,10 @@ Ps ux command user for find status of process.
 21. How to check memory status?
 Free command is useful for checking memory status.
 
+Use cat for quickly displaying the contents of smaller files.
+Use more for viewing longer files one screen at a time, without advanced features.
+Use less for more advanced viewing and navigation of larger files.
+
 22. How to debug a shell script?
 To debug a shell script we execute the script with the “-x” or “-nv”  option.
 
