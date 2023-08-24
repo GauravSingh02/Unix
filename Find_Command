@@ -57,6 +57,8 @@ In this example, the find command is used to locate all .txt files in the specif
 the grep command on each file, searching for the specified term. The {} placeholder and semicolon ; play a crucial role in constructing and executing the 
 command correctly for each file found by find
 
+Use exec when you want to replace the current shell process with a single specified command, optimizing resource usage and avoiding the creation of a new process.
+Use xargs when you need to take the output of one command (usually multiple items) and pass it as arguments to another command, especially when dealing with a large number of items.
 
 # 5 lines before, 10 lines after grep matches
 # -------------------------------------------
