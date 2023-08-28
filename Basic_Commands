@@ -35,13 +35,10 @@ If the current working directory is /home/user/:
 Documents/file.txt: Relative path to a file called file.txt located in the Documents directory under the current directory.
 ../photos/image.jpg: Relative path to a file called image.jpg located in the photos directory one level up from the current directory.
 
-
 2. Cron tab
-
 The cron command is used to repeatedly schedule a task at a specific time. The tasks are stored in a cron file and then executed using the cron command. The cron command reads the string from this file and schedules the task. The syntax for the string to enter in the cron file is as follows:
 
 <minute> <hour> <day> <month> <weekday> <command>
-
 
 another example of executing the date command after every 15 seconds:
 
@@ -160,7 +157,6 @@ ln /tmp/hlink /home/bob/hlink
 
 lrwxrwxrwx 1 bob  bob     4 Aug  3 10:04 link_to_tmp -> /tmp
 -rw-r--r-- 2 bob  bob     0 Aug  3 10:04 hlink
-
 
 ## Through "Stat" command you can get the details about links
 
