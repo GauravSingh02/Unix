@@ -57,13 +57,11 @@ The w means "wide output". Use this option twice for unlimited width.
 
 ps -ef | grep mysql
 
-Zoombie process
+Zoombie process | It refers to a process that has completed its execution but still has an entry in the process table because its exit status hasn't been collected by its parent process yet.
 
 ps -e -o pid,ppid,state,command | grep -w Z
 
-
  ### Top Command 
- 
  
  Linux Top Command Shortcuts:
 
@@ -87,8 +85,7 @@ $ ps -ejH httpd
 # To show the active jobs
 $ jobs (  ) ### post sleep command you can see entry
 
-to resume job background or forground
-
+# To resume job background or forground
 bg %Job_id
 fg %job_id
 
@@ -134,15 +131,11 @@ $ ps u 1 > /home/bob/resources.txt
 #nohup (if you want process to keep running post terminal is logout )
 $ nohup ./echo.sh &
 
-it'll create nohup.out by default which contain ouput of the commands
+#It'll create nohup.out by default which contain ouput of the commands
 
 # Sticky bit ( Restriction deletion flag )
-
-When the sticky bit is set on a directory, only the owner of a file or directory within that directory (or the root user) can delete or rename the file,
-even if other users have write permissions on the directory.
-
+When the sticky bit is set on a directory, only the owner of a file or directory within that directory (or the root user) can delete or rename the file, even if other users have write permissions on the directory.
 and it applies to directories and has no effect on regular files.
-
 
 ##### df & DU command #######
 
@@ -173,8 +166,7 @@ $ state myfile.txt
 
 ## Sending output to /dev/null is often used to suppress unnecessary or verbose messages from commands or scripts.
 If you want to run a command silently without displaying any output, you can redirect the output to /dev/null.
-
-grep –r '^The' /etc/ 2>/dev/null  ### There won't be any error now
+# grep –r '^The' /etc/ 2>/dev/null  ### There won't be any error now
 
 Unix booted.
 Program Unix(kernel) is booted into main memory, and remains active till the computer is shut down
